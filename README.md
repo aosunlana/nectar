@@ -1,6 +1,6 @@
 # nectar
 
-An online grocery store app that utilizes BloC state management and consumesWordpress API
+An online grocery store app that utilizes BloC state management and consumes Wordpress API
 
 ## Getting Started
 
