@@ -1,7 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'onboarding_view.dart';
 
-class SplashScreen extends StatelessWidget {
+class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
+
+  @override
+  State<SplashScreen> createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+  @override
+  void initState() {
+    super.initState();
+    Future.delayed(
+        const Duration(seconds: 3),
+        () => Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const OnboardingView()),
+            ));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -9,35 +27,34 @@ class SplashScreen extends StatelessWidget {
       backgroundColor: const Color(0XFF53B175),
       body: Center(
           child: SizedBox(
-        width: 268,
-        height: 69,
+        width: 268.w,
+        height: 69.h,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const SizedBox(
-                height: 64,
-                width: 55,
-                child: Image(
+            SizedBox(
+                height: 64.h,
+                width: 55.w,
+                child: const Image(
                   image: AssetImage('assets/images/nectar-logo.png'),
                 )),
             Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.center,
-                children: const [
+                children: [
                   SizedBox(
-                      height: 47,
-                      width: 195,
-                      child: Image(
+                      height: 47.h,
+                      width: 195.w,
+                      child: const Image(
                           image:
                               AssetImage('assets/images/nectar-vector.png'))),
                   Text(
-                    'online roceries Store',
+                    'online groceries',
                     style: TextStyle(
-                        fontFamily: 'Gilroy-Medium',
-                        fontSize: 14,
-                        letterSpacing: 2,
-                        color: Color(0XFFFFFFFF)),
+                        fontSize: 14.sp,
+                        letterSpacing: 6.w,
+                        color: const Color(0XFFFFFFFF)),
                   )
                 ])
           ],
