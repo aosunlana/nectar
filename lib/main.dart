@@ -4,7 +4,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nectar/routes.dart';
 
 void main() {
-  runApp(const NectarApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
+      overlays: [SystemUiOverlay.top]).then((_) => runApp(const NectarApp()));
 }
 
 class NectarApp extends StatelessWidget {
@@ -22,10 +24,14 @@ class NectarApp extends StatelessWidget {
         builder: (context, child) => AnnotatedRegion<SystemUiOverlayStyle>(
           child: child!,
           value: const SystemUiOverlayStyle(
-            statusBarColor: Colors.transparent,
+            systemNavigationBarColor: Colors.transparent,
+            systemNavigationBarDividerColor: Colors.transparent,
+            systemNavigationBarIconBrightness: Brightness.light,
+            systemNavigationBarContrastEnforced: false,
+            systemStatusBarContrastEnforced: false,
             statusBarIconBrightness: Brightness.dark,
-            systemNavigationBarColor: Color(0XFFFFFFFF),
-            systemNavigationBarIconBrightness: Brightness.dark,
+            statusBarColor: Colors.transparent,
+            statusBarBrightness: Brightness.dark,
           ),
         ),
         theme: ThemeData(

@@ -7,7 +7,7 @@ import 'presentation/screens/explore_view.dart';
 import 'presentation/screens/filters_view.dart';
 import 'presentation/screens/home_view.dart';
 import 'presentation/screens/login_view.dart';
-import 'presentation/screens/logon_view.dart';
+import 'presentation/screens/get_started_view.dart';
 import 'presentation/screens/onboarding_view.dart';
 import 'presentation/screens/order_failed_view.dart';
 import 'presentation/screens/order_success_view.dart';
@@ -21,8 +21,8 @@ class RouteGenerator {
   static const String splashView = '/';
   static const String homePage = '/home';
   static const String accountView = '/account';
-  static const String loginView = '/login';
   static const String orderFailedView = '/orderFailed';
+  static const String getStartedView = '/getStarted';
   static const String filtersView = '/filters';
   static const String pinVerificationView = '/pinVerification';
   static const String productDetailView = '/productDetail';
@@ -33,7 +33,7 @@ class RouteGenerator {
   static const String checkoutView = '/checkout';
   static const String exploreView = '/explore';
   static const String searchView = '/search';
-  static const String logonView = '/logon';
+  static const String loginView = '/login';
   static const String cartView = '/cart';
 
   RouteGenerator._();
@@ -64,9 +64,9 @@ class RouteGenerator {
         return MaterialPageRoute(
           builder: (_) => const LoginView(),
         );
-      case logonView:
+      case getStartedView:
         return MaterialPageRoute(
-          builder: (_) => const LogonView(),
+          builder: (_) => const GetStartedView(),
         );
       case pinVerificationView:
         return MaterialPageRoute(
