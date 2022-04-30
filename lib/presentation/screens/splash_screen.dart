@@ -36,6 +36,7 @@ class _SplashScreenState extends State<SplashScreen> {
         statusBarBrightness: Brightness.light,
       ),
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
         backgroundColor: const Color(0XFF53B175),
         body: Center(
             child: SizedBox(
